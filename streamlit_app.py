@@ -1,15 +1,19 @@
 import streamlit as st
 
-# '메뉴 열기' 버튼을 누르면 새 창을 띄우는 방식
-if st.button("메뉴 열기"):
-    st.markdown(
-        """
-        <script type="text/javascript">
-            window.open("data:text/html,<html><head><title>하얀 화면</title></head>
-            <body style='background-color: white;'>
-                <h2>하얀 화면입니다!</h2>
-            </body></html>", "_blank");
-        </script>
-        """, unsafe_allow_html=True
-    )
+# CSS를 사용하여 배경색을 하얀색으로 설정
+st.markdown(
+    """
+    <style>
+    .reportview-container {
+        background-color: white;
+    }
+    .main {
+        background-color: white;
+    }
+    </style>
+    """, unsafe_allow_html=True
+)
 
+# 나머지 Streamlit 코드
+st.title("배경이 하얀색인 Streamlit 앱")
+st.write("배경색을 하얀색으로 설정한 예시입니다.")
