@@ -1,40 +1,23 @@
 import streamlit as st
 
-# HTML, CSS, JavaScript 코드 작성
+# HTML, CSS 코드 작성
 st.markdown("""
     <style>
-        .text {
-            font-size: 100pt;
-            transition: font-size 0.2s ease;
-            display: inline-block;
-            opacity: 1;
+        .subtopic {
+            font-size: 20px;
+            color: #007bff;
+            cursor: pointer;
+            text-decoration: underline;
         }
-        
-        .text:hover {
-            font-size: 200pt;
-        }
-        
-        .text.hidden {
-            opacity: 0;
+
+        .subtopic:hover {
+            color: #0056b3;
         }
     </style>
-
-    <div id="text1" class="text">텍스트 1</div>
-    <div id="text2" class="text">텍스트 2</div>
-    <div id="text3" class="text">텍스트 3</div>
-    <div id="text4" class="text">텍스트 4</div>
-    <div id="text5" class="text">텍스트 5</div>
-
-    <script>
-        // 텍스트가 200pt 이상으로 커지면 숨기기
-        const texts = document.querySelectorAll('.text');
-        
-        texts.forEach(text => {
-            text.addEventListener('transitionend', () => {
-                if (parseFloat(getComputedStyle(text).fontSize) >= 200) {
-                    text.classList.add('hidden');
-                }
-            });
-        });
-    </script>
+    
+    <div class="subtopic" onclick="window.open('https://www.example.com', '_blank')">소주제 1</div>
+    <div class="subtopic" onclick="window.open('https://www.example.com', '_blank')">소주제 2</div>
+    <div class="subtopic" onclick="window.open('https://www.example.com', '_blank')">소주제 3</div>
+    <div class="subtopic" onclick="window.open('https://www.example.com', '_blank')">소주제 4</div>
+    <div class="subtopic" onclick="window.open('https://www.example.com', '_blank')">소주제 5</div>
 """, unsafe_allow_html=True)
