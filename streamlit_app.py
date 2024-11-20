@@ -5,10 +5,20 @@ import time
 st.title("스크롤하면 점진적으로 나타나는 소주제들")
 
 # 텍스트를 점진적으로 표시하는 함수
-def gradually_reveal_text(text_list, interval=0.5):
-    for text in text_list:
-        st.subheader(text)  # 각 소주제는 subheader로 출력
-        time.sleep(interval)
+def gradually_reveal_text_on_scroll(text_list):
+    # 세션 상태에서 카운터를 설정하여 스크롤할 때마다 카운터를 증가시킴
+    if 'counter' not in st.session_state:
+        st.session_state.counter = 0
+
+    # 페이지에 소주제 하나씩 추가
+    num_displayed = st.session_state.counter
+    for i in range(num_displayed):
+        st.subheader(text_list[i])
+
+    # 스크롤해서 카운터를 증가시키는 기능
+    if num_displayed < len(text_list):
+        st.session_state.counter += 1
+        st.text('스크롤하여 계속 보기')
 
 # 10개의 소주제 리스트
 subtopics = [
@@ -24,4 +34,4 @@ subtopics = [
     "소주제 10: AI의 미래"
 ]
 
-gradually_reveal_text(subtopics)
+gradually_reveal_text_on_scroll(subtopics)
