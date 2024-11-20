@@ -1,13 +1,18 @@
 import streamlit as st
 
-# 5개의 열을 생성
-columns = st.columns(5)
-
-# 각 열에 텍스트를 삽입
-for i in range(5):
-    columns[i].write(f"열 {i+1}")
-
-# 각 열에 버튼 추가 예시
-for i in range(5):
-    if columns[i].button(f"버튼 {i+1}"):
-        st.write(f"버튼 {i+1}이 클릭되었습니다!")
+# 왼쪽 상단에 버튼을 만들어 메뉴를 트는 기능 구현
+if st.button("메뉴 열기"):
+    # 버튼 클릭 시 4개의 메뉴가 표시됨
+    menu = st.radio("메뉴 선택", ["메뉴 1", "메뉴 2", "메뉴 3", "메뉴 4"])
+    
+    # 선택된 메뉴에 대한 콘텐츠 표시
+    if menu == "메뉴 1":
+        st.write("메뉴 1이 선택되었습니다.")
+    elif menu == "메뉴 2":
+        st.write("메뉴 2가 선택되었습니다.")
+    elif menu == "메뉴 3":
+        st.write("메뉴 3이 선택되었습니다.")
+    elif menu == "메뉴 4":
+        st.write("메뉴 4가 선택되었습니다.")
+else:
+    st.write("왼쪽 상단의 버튼을 클릭하여 메뉴를 열 수 있습니다.")
