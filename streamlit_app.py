@@ -32,15 +32,3 @@ st.markdown("""
             text-decoration: underline;
         }
 
-        .subtopic:hover {
-            color: #0056b3;
-        }
-    </style>
-    
-    <div class="subtopic"><a href="http://localhost:8501/hello.html" target="_blank">소주제 1</a></div>
-    <div class="subtopic"><a href="http://localhost:8501/hello.html" target="_blank">소주제 2</a></div>
-    <div class="subtopic"><a href="http://localhost:8501/hello.html" target="_blank">소주제 3</a></div>
-    <div class="subtopic"><a href="http://localhost:8501/hello.html" target="_blank">소주제 4</a></div>
-    <div class="subtopic"><a href="http://localhost:8501/hello.html" target="_blank">소주제 5</a></div>
-""", unsafe_allow_html=True)
-
