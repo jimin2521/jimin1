@@ -15,7 +15,7 @@ def gradually_reveal_text_on_scroll(text_list):
     for i in range(num_displayed):
         st.subheader(text_list[i])
 
-    # 스크롤해서 카운터를 증가시키는 기능
+    # 사용자가 스크롤을 하면 카운터를 증가시킴
     if num_displayed < len(text_list):
         st.session_state.counter += 1
         st.text('스크롤하여 계속 보기')
