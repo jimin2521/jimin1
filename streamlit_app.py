@@ -4,11 +4,11 @@ import streamlit as st
 st.markdown("""
     <style>
     .hover-text {
-        font-size: 10px;
+        font-size: 100px;
         transition: font-size 0.3s ease;
     }
     .hover-text:hover {
-        font-size: 20px;
+        font-size: 200px;
     }
     </style>
     <div class="hover-text">텍스트 1</div>
