@@ -1,6 +1,6 @@
 import streamlit as st
 
-# HTML, CSS 코드 작성
+# HTML과 CSS를 사용하여 소주제 클릭 시 새 창 열리게 하기
 st.markdown("""
     <style>
         .subtopic {
@@ -15,9 +15,9 @@ st.markdown("""
         }
     </style>
     
-    <div class="subtopic" onclick="window.open('https://www.example.com', '_blank')">소주제 1</div>
-    <div class="subtopic" onclick="window.open('https://www.example.com', '_blank')">소주제 2</div>
-    <div class="subtopic" onclick="window.open('https://www.example.com', '_blank')">소주제 3</div>
-    <div class="subtopic" onclick="window.open('https://www.example.com', '_blank')">소주제 4</div>
-    <div class="subtopic" onclick="window.open('https://www.example.com', '_blank')">소주제 5</div>
+    <div class="subtopic"><a href="https://www.example.com" target="_blank">소주제 1</a></div>
+    <div class="subtopic"><a href="https://www.example.com" target="_blank">소주제 2</a></div>
+    <div class="subtopic"><a href="https://www.example.com" target="_blank">소주제 3</a></div>
+    <div class="subtopic"><a href="https://www.example.com" target="_blank">소주제 4</a></div>
+    <div class="subtopic"><a href="https://www.example.com" target="_blank">소주제 5</a></div>
 """, unsafe_allow_html=True)
