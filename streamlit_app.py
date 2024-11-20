@@ -1,18 +1,20 @@
 import streamlit as st
 
-# 왼쪽 상단에 버튼을 만들어 메뉴를 트는 기능 구현
-if st.button("#"):
-    # 버튼 클릭 시 4개의 메뉴가 표시됨
-    menu = st.radio("메뉴 선택", ["메뉴 1", "메뉴 2", "메뉴 3", "메뉴 4"])
-    
-    # 선택된 메뉴에 대한 콘텐츠 표시
-    if menu == "메뉴 1":
-        st.write("메뉴 1이 선택되었습니다.")
-    elif menu == "메뉴 2":
-        st.write("메뉴 2가 선택되었습니다.")
-    elif menu == "메뉴 3":
-        st.write("메뉴 3이 선택되었습니다.")
-    elif menu == "메뉴 4":
-        st.write("메뉴 4가 선택되었습니다.")
-else:
-    st.write("왼쪽 상단의 버튼을 클릭하여 메뉴를 열 수 있습니다.")
+# '메뉴 열기' 버튼을 누르면 새 창을 띄우기
+if st.button("메뉴 열기"):
+    # 새 창을 열기 위해 HTML 코드 삽입
+    st.markdown(
+        """
+        <script type="text/javascript">
+            window.open("data:text/html,<html><body>
+                <h2>메뉴 선택</h2>
+                <ul>
+                    <li><a href="#">메뉴 1</a></li>
+                    <li><a href="#">메뉴 2</a></li>
+                    <li><a href="#">메뉴 3</a></li>
+                    <li><a href="#">메뉴 4</a></li>
+                </ul>
+            </body></html>", "_blank");
+        </script>
+        """, unsafe_allow_html=True
+    )
