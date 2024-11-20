@@ -11,6 +11,7 @@ import streamlit as st
 st.title("안녕하세요")
 
 st.header("1. 정적 페이지 만들기")
+st.header("2. 정적 페이지 만들기")
 
 st.markdown(
     """
