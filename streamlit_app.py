@@ -1,37 +1,20 @@
 import streamlit as st
 import time
 
-# 제목
-st.title("스크롤하면 점진적으로 나타나는 소주제들")
+# 타이틀
+st.title('스크롤에 따라 소주제들이 나타나는 예시')
 
-# 텍스트를 점진적으로 표시하는 함수
-def gradually_reveal_text_on_scroll(text_list):
-    # 세션 상태에서 카운터를 설정하여 스크롤할 때마다 카운터를 증가시킴
-    if 'counter' not in st.session_state:
-        st.session_state.counter = 0
-
-    # 페이지에 소주제 하나씩 추가
-    num_displayed = st.session_state.counter
-    for i in range(num_displayed):
-        st.subheader(text_list[i])
-
-    # 사용자가 스크롤을 하면 카운터를 증가시킴
-    if num_displayed < len(text_list):
-        st.session_state.counter += 1
-        st.text('스크롤하여 계속 보기')
-
-# 10개의 소주제 리스트
+# 소주제 목록
 subtopics = [
-    "소주제 1: 데이터 분석의 기초",
-    "소주제 2: Python 프로그래밍",
-    "소주제 3: 머신 러닝 기초",
-    "소주제 4: 딥러닝의 원리",
-    "소주제 5: 자연어 처리",
-    "소주제 6: 데이터 시각화",
-    "소주제 7: 웹 개발 기초",
-    "소주제 8: 클라우드 컴퓨팅",
-    "소주제 9: 인공지능 윤리",
-    "소주제 10: AI의 미래"
+    "소주제 1", "소주제 2", "소주제 3", "소주제 4", "소주제 5", 
+    "소주제 6", "소주제 7", "소주제 8", "소주제 9", "소주제 10", 
+    "소주제 11", "소주제 12", "소주제 13", "소주제 14", "소주제 15",
+    "소주제 16", "소주제 17", "소주제 18", "소주제 19", "소주제 20"
 ]
 
-gradually_reveal_text_on_scroll(subtopics)
+# 소주제를 10개씩 표시하도록 설정
+for i in range(0, len(subtopics), 10):
+    for j in range(i, min(i + 10, len(subtopics))):
+        with st.expander(subtopics[j]):
+            st.write(f"{subtopics[j]}에 대한 내용이 여기에 있습니다.")
+            time.sleep(0.1)  # 애니메이션 효과를 위해 잠시 대기
