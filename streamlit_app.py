@@ -1,7 +1,7 @@
 import streamlit as st
 
 # 왼쪽 상단에 버튼을 만들어 메뉴를 트는 기능 구현
-if st.button("메뉴 열기"):
+if st.button("#"):
     # 버튼 클릭 시 4개의 메뉴가 표시됨
     menu = st.radio("메뉴 선택", ["메뉴 1", "메뉴 2", "메뉴 3", "메뉴 4"])
     
