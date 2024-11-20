@@ -17,4 +17,4 @@ if st.button("메뉴 열기"):
             </body></html>", "_blank");
         </script>
         """, unsafe_allow_html=True
-    )
+    
