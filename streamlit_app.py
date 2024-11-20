@@ -8,7 +8,7 @@
 import streamlit as st
 
 
-st.title("Streamlit 웹 애플리케이션 with Elice")
+st.title("안녕하세요")
 
 st.header("1. 정적 페이지 만들기")
 
